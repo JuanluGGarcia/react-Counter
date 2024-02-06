@@ -17,7 +17,8 @@ const Counter = () => {
 			{/* <Button action={() => reset(setCounter)} text={'0'} /> */}
 			{/* <Button action={() => increment(counter, setCounter)} text={'+1'} /> */}
 
-            {/* otra forma de ponerlo. El valor de la etiqueta lo recoge en Button la propiedad children */}
+            {/* Le pasamos action al componente Button porque NO PODEMOS HACER CLICK SOBRE UN COMPONENTE (BUTTON), POR ESO AQUI NO PONEMOS 'ONCLICK'. EL ONCLICK TENEMOS QUE PONERLO SOBRE LA PIEZA DEL DOM QUE ES 'button' QUE LO TENEMOS DENTRO DEL COMPONENTE BUTTON.
+			Otra forma de ponerlo. El valor de la etiqueta lo recoge en Button la propiedad children */}
             <Button action={() => decrement(counter, setCounter)}>-1</Button>
 			<Button action={() => reset(setCounter)}>0</Button>
 			<Button action={() => increment(counter, setCounter)}>+1</Button>
