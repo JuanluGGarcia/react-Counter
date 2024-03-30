@@ -1,24 +1,22 @@
 import { useState } from 'react';
-import { StyledButton, StyledSquare } from './style';
+import { StyledSquare } from './style';
+import Button from '../button/Button';
 
 const Square = () => {
-    const [color, setColor] = useState('red');
+    const [isRed, setIsRed] = useState('true');
 
 	return (
         <>
-            <StyledSquare $bgColor={color} />
-            <StyledButton onClick={() => handleColor(color, setColor)}>Change color</StyledButton>
+            <StyledSquare isRed={isRed} />
+            {/* <button onClick={() => setIsRed(!isRed)}>Change color</button> */}
+            <Button action={() => handleColor(isRed, setIsRed)}>Change color</Button>
         </>
     );
 };
 
-const handleColor = (color, setColor) => {
-    if (color === 'red') {
-        color='green';
-    }else {
-        color='red';
-    } 
-    setColor(color);
-};
+const handleColor = (isRed, setIsRed) =>  {
+    setIsRed(!isRed);
+}
+
 export default Square;
  
